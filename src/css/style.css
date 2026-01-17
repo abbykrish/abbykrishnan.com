@@ -384,56 +384,105 @@ footer {
   transform: translateY(-2px);
 }
 
-/* Map page */
-.map-container {
-  width: 100%;
-  height: 450px;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 2px solid var(--sage);
-  margin: 1.5rem 0;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+/* SF Recs */
+.recs-section {
+  margin-bottom: 2rem;
 }
 
-.spot-list {
-  list-style: none;
-  padding-left: 0;
+.recs-type-header {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.1rem;
+  color: var(--eggplant);
+  margin: 0 0 0.75rem 0;
+}
+
+.recs-type-header::before {
+  content: none;
+}
+
+.recs-cards {
   display: grid;
-  gap: 1rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 0.75rem;
 }
 
-.spot-item {
-  padding: 1rem;
+.recs-section[data-collapsed="true"] .rec-card:nth-child(n+7) {
+  display: none;
+}
+
+.recs-section[data-collapsed="false"] .rec-card {
+  display: block;
+}
+
+.rec-card {
   background: white;
-  border-radius: 8px;
-  border-left: 4px solid var(--terracotta);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
   transition: all 0.2s ease;
 }
 
-.spot-item:hover {
-  transform: translateX(4px);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+.rec-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
 }
 
-.spot-name {
+.rec-name {
   font-family: 'Fraunces', Georgia, serif;
   font-weight: 600;
+  font-size: 0.95rem;
   color: var(--eggplant);
-  margin-bottom: 0.25rem;
+  line-height: 1.3;
 }
 
-.spot-type {
-  font-size: 0.75rem;
+.rec-name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.rec-name a:hover {
+  color: var(--terracotta);
+}
+
+.rec-neighborhood {
+  font-size: 0.7rem;
   color: var(--sage-dark);
+  display: block;
+  margin-top: 0.35rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
 }
 
-.spot-note {
-  font-size: 0.9rem;
+.rec-note {
+  font-size: 0.8rem;
   color: var(--text-light);
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
+  line-height: 1.4;
+}
+
+.show-more-btn {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid var(--sage);
+  border-radius: 6px;
+  color: var(--sage-dark);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.show-more-btn:hover {
+  background: var(--sage);
+  color: white;
+}
+
+.show-more-btn[aria-expanded="true"] {
+  background: var(--border);
 }
 
 /* Book list */
@@ -476,6 +525,27 @@ footer {
   text-align: center;
   font-style: italic;
   color: var(--text-light);
+}
+
+.substack-posts {
+  margin-top: 2rem;
+}
+
+/* Instagram section */
+.instagram-section {
+  margin-top: 3rem;
+}
+
+.instagram-embed {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.instagram-media {
+  max-width: 400px !important;
+  min-width: 300px !important;
+  margin: 0 auto !important;
 }
 
 /* Responsive */

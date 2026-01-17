@@ -1,0 +1,35 @@
+---
+layout: base.njk
+title: My favorite SF Spots
+---
+
+<h1>SF Spots</h1>
+
+<p>Some of my favorite spots around San Francisco.</p>
+
+{% if sfspots.length > 0 %}
+{% set spotsByType = sfspots | groupby("type") %}
+{% for type, spots in spotsByType %}
+<section class="recs-section" data-collapsed="true">
+  <h2 class="recs-type-header">{{ type if type else "Other" }}</h2>
+  <div class="recs-cards">
+  {% for spot in spots %}
+    <div class="rec-card">
+      <div class="rec-name">
+        {% if spot.link %}<a href="{{ spot.link }}" target="_blank" rel="noopener">{{ spot.name }}</a>{% else %}{{ spot.name }}{% endif %}
+      </div>
+      {% if spot.location %}<span class="rec-neighborhood">{{ spot.location }}</span>{% endif %}
+      {% if spot.notes %}<div class="rec-note">{{ spot.notes }}</div>{% endif %}
+    </div>
+  {% endfor %}
+  </div>
+  {% if spots.length > 6 %}
+  <button class="show-more-btn" aria-expanded="false">Show all {{ spots.length }}</button>
+  {% endif %}
+</section>
+{% endfor %}
+{% else %}
+<p>Coming soon — check back later!</p>
+{% endif %}
+
+<p class="divider">🍅 🍕 🫒</p>

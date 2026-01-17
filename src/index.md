@@ -20,12 +20,10 @@ I studied Computer Science at UT Austin with a certificate in Public Policy. I c
 
 In my free time, I also love:
 
-- Experimenting in the kitchen — find my latest creations on [Instagram](https://www.instagram.com/waitingfortomatoszn/)
-- Reading about urbanism and transit
-- Exploring San Francisco's history
-- Taking the 49 Van Ness, the 22 Fillmore, and Lyft bikes all around the city 
-
-<p class="divider">&#127813;</p>
+- Experimenting in the kitchen 👩🏽‍🍳
+- Reading about housing and transit 🚌
+- Watching NBA basketball 🏀
+- Riding the 49 Van Ness, the 22 Fillmore, and Lyft bikes all around the city 🌉
 
 ## Recent writing
 

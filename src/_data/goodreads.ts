@@ -1,9 +1,23 @@
 import EleventyFetch from "@11ty/eleventy-fetch";
 
-export default async function() {
+interface Book {
+  title: string;
+  author: string;
+  rating: number;
+  dateRead: string;
+  imageUrl: string;
+  link: string;
+}
+
+interface GoodreadsData {
+  read: Book[];
+  currentlyReading: Book[];
+  totalRead: number;
+}
+
+export default async function(): Promise<GoodreadsData> {
   const userId = "68621097";
 
-  // Fetch read books
   const readUrl = `https://www.goodreads.com/review/list_rss/${userId}?shelf=read`;
   const currentlyReadingUrl = `https://www.goodreads.com/review/list_rss/${userId}?shelf=currently-reading`;
 
@@ -19,17 +33,16 @@ export default async function() {
       })
     ]);
 
-    // Parse RSS XML
-    const parseBooks = (xml) => {
-      const books = [];
+    const parseBooks = (xml: string): Book[] => {
+      const books: Book[] = [];
       const itemRegex = /<item>([\s\S]*?)<\/item>/g;
       let match;
 
       while ((match = itemRegex.exec(xml)) !== null) {
         const item = match[1];
 
-        const getTag = (tag) => {
-          const regex = new RegExp(`<${tag}><!\\[CDATA\\[([\\s\\S]*?)\\]\\]><\\/${tag}>|<${tag}>([\\s\\S]*?)<\\/${tag}>`);
+        const getTag = (tag: string): string => {
+          const regex = new RegExp(`<${tag}><!\\[CDATA\\[([\\s\\S]*?)\\]\\]></${tag}>|<${tag}>([\\s\\S]*?)</${tag}>`);
           const m = item.match(regex);
           return m ? (m[1] || m[2] || '').trim() : '';
         };
@@ -56,11 +69,11 @@ export default async function() {
       return books;
     };
 
-    const readBooks = parseBooks(readXml);
-    const currentlyReading = parseBooks(currentXml);
+    const readBooks = parseBooks(readXml as string);
+    const currentlyReading = parseBooks(currentXml as string);
 
     return {
-      read: readBooks.slice(0, 10), // Last 10 read
+      read: readBooks.slice(0, 10),
       currentlyReading,
       totalRead: readBooks.length
     };

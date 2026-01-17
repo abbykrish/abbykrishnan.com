@@ -2,13 +2,16 @@
   "name": "abbykrishnan-com",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"eleventy --serve\" \"esbuild src/ts/main.ts --bundle --outfile=_site/js/main.js --watch\"",
-    "build": "eleventy && esbuild src/ts/main.ts --bundle --outfile=_site/js/main.js --minify"
+    "dev": "concurrently \"tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts --serve\" \"esbuild src/ts/main.ts --bundle --outfile=_site/js/main.js --watch\"",
+    "build": "tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts && esbuild src/ts/main.ts --bundle --outfile=_site/js/main.js --minify",
+    "build:fresh": "rm -rf .cache && npm run build"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
+    "@types/node": "^22.19.7",
     "concurrently": "^9.0.0",
     "esbuild": "^0.24.0",
+    "tsx": "^4.21.0",
     "typescript": "^5.6.0"
   },
   "dependencies": {
