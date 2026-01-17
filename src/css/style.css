@@ -206,11 +206,6 @@ li::marker {
 .intro .highlight {
   background: linear-gradient(to top, var(--terracotta-light) 35%, transparent 35%);
   padding: 0 0.15em;
-  transition: background 0.3s ease;
-}
-
-.intro .highlight:hover {
-  background: linear-gradient(to top, var(--terracotta-light) 100%, transparent 0%);
 }
 
 @media (max-width: 500px) {

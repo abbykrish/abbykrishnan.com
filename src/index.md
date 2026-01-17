@@ -14,7 +14,7 @@ title: Home
 
 I'm an engineer at [Treet](https://treet.co), where we build resale and inventory solutions for brands. Before that, I helped build [Pavilion](https://withpavilion.com/) (civic tech for public procurement) and worked on elections integrity at Facebook.
 
-I studied Computer Science at UT Austin with a certificate in Public Policy. I care about how technology intersects with civic life.
+I studied Computer Science at UT Austin and took lots of government classes for fun. I care about how technology intersects with civic life.
 
 ## Interests
 
@@ -24,7 +24,3 @@ In my free time, I also love:
 - Reading about housing and transit 🚌
 - Watching NBA basketball 🏀
 - Riding the 49 Van Ness, the 22 Fillmore, and Lyft bikes all around the city 🌉
-
-## Recent writing
-
-You can read some of my [writing](/writing/) here.
