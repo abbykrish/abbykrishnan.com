@@ -23,5 +23,6 @@ In my free time, I also love:
 - Experimenting in the kitchen 👩🏽‍🍳
 - Reading about housing and transit 🚌
 - Watching NBA basketball 🏀
-- Thrifting new outfits and jackets to protect myself from wind 🍃🧥
+- Growing tomatoes, herbs, and passionfruit, on my 2ft x 2ft balcony 🪴
+- Thrifting new outfits only to cover them up with a jacket once the sunsets 🧥
 - Riding the 49 Van Ness, the 22 Fillmore, and Lyft bikes all around the city 🌉
