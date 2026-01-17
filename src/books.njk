@@ -1,0 +1,39 @@
+---
+layout: base.njk
+title: Books
+---
+
+<h1>Books</h1>
+
+<p>I love to read — mostly fiction, historical fiction, memoir, and the occasional sci-fi. Pulled automatically from <a href="https://www.goodreads.com/user/show/68621097-abby-krishnan">my Goodreads</a>.</p>
+
+{% if goodreads.currentlyReading.length > 0 %}
+<h2>Currently Reading</h2>
+<ul class="book-list">
+{% for book in goodreads.currentlyReading %}
+  <li class="book-item">
+    <span class="book-title">{{ book.title }}</span>
+    <span class="book-author">by {{ book.author }}</span>
+  </li>
+{% endfor %}
+</ul>
+{% endif %}
+
+<h2>Recently Read</h2>
+<ul class="book-list">
+{% for book in goodreads.read %}
+  <li class="book-item">
+    <span class="book-title">{{ book.title }}</span>
+    <span class="book-author">by {{ book.author }}</span>
+    {% if book.rating > 0 %}
+    <span class="book-rating">
+      {% for i in range(0, book.rating) %}★{% endfor %}{% for i in range(book.rating, 5) %}☆{% endfor %}
+    </span>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>
+
+<p class="divider">&#128218;</p>
+
+<p class="more-books">...and {{ goodreads.totalRead - 10 }}+ more on <a href="https://www.goodreads.com/user/show/68621097-abby-krishnan">Goodreads</a>.</p>

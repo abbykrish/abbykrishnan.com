@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" >
+  <channel>
+    <xhtml:meta xmlns:xhtml="http://www.w3.org/1999/xhtml" name="robots" content="noindex" />
+    <title>Abby's bookshelf: currently-reading</title>
+    <copyright><![CDATA[Copyright (C) 2026 Goodreads Inc. All rights reserved.]]>
+    </copyright>
+    <link><![CDATA[https://www.goodreads.com/review/list_rss/68621097?shelf=currently-reading]]></link>
+    <atom:link href="https://www.goodreads.com/review/list_rss/68621097?shelf=currently-reading" rel="self" type="application/rss+xml" />
+    <description><![CDATA[Abby's bookshelf: currently-reading]]></description>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 02 Jan 2022 08:28:59 -0800</lastBuildDate>
+    <ttl>60</ttl>
+    <image>
+      <title>Abby's bookshelf: currently-reading</title>
+      <link><![CDATA[https://www.goodreads.com/review/list_rss/68621097?shelf=currently-reading]]></link>
+      <width>144</width>
+      <height>41</height>
+      <url>https://www.goodreads.com/images/layout/goodreads_logo_144.jpg</url>
+    </image>
+    
+  <item>
+    <guid><![CDATA[https://www.goodreads.com/review/show/4359073853?utm_medium=api&utm_source=rss]]></guid>
+    <pubDate><![CDATA[Sun, 02 Jan 2022 08:28:59 -0800]]></pubDate>
+    <title><![CDATA[The Power Broker: Robert Moses and the Fall of New York]]></title>
+    <link><![CDATA[https://www.goodreads.com/review/show/4359073853?utm_medium=api&utm_source=rss]]></link>
+    <book_id>1111</book_id>
+    <book_image_url><![CDATA[https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1403194611l/1111._SY75_.jpg]]></book_image_url>
+    <book_small_image_url><![CDATA[https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1403194611l/1111._SY75_.jpg]]></book_small_image_url>
+    <book_medium_image_url><![CDATA[https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1403194611l/1111._SX98_.jpg]]></book_medium_image_url>
+    <book_large_image_url><![CDATA[https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1403194611l/1111.jpg]]></book_large_image_url>
+    <book_description><![CDATA[One of the most acclaimed books of our time, winner of both the Pulitzer and the Francis Parkman prizes, <b>The Power Broker</b> tells the hidden story behind the shaping (and mis-shaping) of twentieth-century New York (city and state) and makes public what few have known: that Robert Moses was, for almost half a century, the single most powerful man of our time in New York, the shaper not only of the city's politics but of its physical structure and the problems of urban decline that plague us today.<br /><br />In revealing how Moses did it--how he developed his public authorities into a political machine that was virtually a fourth branch of government, one that could bring to their knees Governors and Mayors (from La Guardia to Lindsay) by mobilizing banks, contractors, labor unions, insurance firms, even the press and the Church, into an irresistible economic force--Robert Caro reveals how power works in all the cities of the United States. Moses built an empire and lived like an emperor. He personally conceived and completed public works costing 27 billion dollars--the greatest builder America (and probably the world) has ever known. Without ever having been elected to office, he dominated the men who were--even his most bitter enemy, Franklin D. Roosevelt, could not control him--until he finally encountered, in Nelson Rockefeller, the only man whose power (and ruthlessness in wielding it) equalled his own.]]></book_description>
+    <book id="1111">
+      <num_pages>1246</num_pages>
+    </book>
+    <author_name>Robert A. Caro</author_name>
+    <isbn>0394720245</isbn>
+    <user_name>Abby</user_name>
+    <user_rating>0</user_rating>
+    <user_read_at></user_read_at>
+    <user_date_added><![CDATA[Sun, 02 Jan 2022 08:28:59 -0800]]></user_date_added>
+    <user_date_created><![CDATA[Sat, 27 Nov 2021 14:13:53 -0800]]></user_date_created>
+    <user_shelves>currently-reading</user_shelves>
+    <user_review></user_review>
+    <average_rating>4.52</average_rating>
+    <book_published>1974</book_published>
+    <description>
+      <![CDATA[
+      <a href="https://www.goodreads.com/book/show/1111.The_Power_Broker?utm_medium=api&amp;utm_source=rss"><img alt="The Power Broker: Robert Moses and the Fall of New York" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1403194611l/1111._SY75_.jpg" /></a><br/>
+                                      author: Robert A. Caro<br/>
+                                      name: Abby<br/>
+                                      average rating: 4.52<br/>
+                                      book published: 1974<br/>
+                                      rating: 0<br/>
+                                      read at: <br/>
+                                      date added: 2022/01/02<br/>
+                                      shelves: currently-reading<br/>
+                                      review: <br/><br/>
+                                      ]]>
+    </description>
+  </item>
+
+  </channel>
+</rss>

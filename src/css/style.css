@@ -436,6 +436,48 @@ footer {
   margin-top: 0.5rem;
 }
 
+/* Book list */
+.book-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.book-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.book-item:last-child {
+  border-bottom: none;
+}
+
+.book-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  color: var(--eggplant);
+}
+
+.book-author {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.book-rating {
+  color: var(--squash);
+  font-size: 0.85rem;
+  margin-left: auto;
+}
+
+.more-books {
+  text-align: center;
+  font-style: italic;
+  color: var(--text-light);
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   html {
