@@ -4,6 +4,19 @@ interface Spot {
   [key: string]: string;
 }
 
+const typeLabels: Record<string, string> = {
+  "Restaurant": "Restaurants",
+  "Bar": "Bars",
+  "Coffee": "Coffee Shops",
+  "Gym": "Gyms",
+  "Grocery": "Grocery Stores",
+  "Bakery": "Bakeries",
+  "Cafe": "Cafes",
+  "Park": "Parks",
+  "Museum": "Museums",
+  "Shop": "Shops"
+};
+
 function parseCSVLine(line: string): string[] {
   const result: string[] = [];
   let current = '';
@@ -57,6 +70,11 @@ export default async function(): Promise<Spot[]> {
       headers.forEach((header: string, index: number) => {
         spot[header] = values[index] || '';
       });
+
+      // Map type to friendly label
+      if (spot.type && typeLabels[spot.type]) {
+        spot.type = typeLabels[spot.type];
+      }
 
       if (spot.name) {
         spots.push(spot);
