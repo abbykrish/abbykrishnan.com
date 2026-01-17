@@ -9,7 +9,7 @@ I'm Abby Krishnan, a software engineer based in San Francisco.
 
 ## Work
 
-I'm drawn to early-stage companies where I can make product decisions, collaborate with a tight-knit team, execute quickly, and see the direct impact of my work. My experience spans:
+I love early-stage companies where I can make product decisions, collaborate with a tight-knit team, execute quickly, and see the direct impact of my work. 
 
 - **Treet** (2024–present) — Engineer building e-commerce tools for brand resale
 - **Phaselaw** (2023) — Founding engineer on data privacy tooling
@@ -19,20 +19,14 @@ I'm drawn to early-stage companies where I can make product decisions, collabora
 
 ## Civic work
 
-Technology and civic life are deeply connected. I've been involved in:
+Technology and civic life are deeply connected. 
 
 - **TX Votes** — Organized 100+ voter registration events at UT Austin, recognized by Travis County for registering 400+ voters
-- **Texas Civic Tech Project** — Founded and led a student organization and weekly seminar on civic technology
+- **Texas Civic Tech Project** — Founded and led a student organization that hosted weekly seminar on various topics in civic technology. 
 
 ## Education
 
 BS in Computer Science from the University of Texas at Austin, with a Bridging Disciplines Certificate in Public Policy.
-
-## The kitchen stuff
-
-I'm a home cook who believes vegetarian food should be exciting, not an afterthought. I grew up eating South Indian food and love exploring how different cuisines approach vegetables. 
-
-<p class="divider">&#127813; &#127814; &#127815;</p>
 
 ## Get in touch
 
