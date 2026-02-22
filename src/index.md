@@ -12,7 +12,7 @@ title: Home
 
 ## Currently
 
-I'm an engineer at [Treet](https://treet.co), where we build resale and inventory solutions for brands. Before that, I helped build [Pavilion](https://withpavilion.com/) (civic tech for public procurement).
+I'm an engineer on break exploring AI safety and better evals. Previously, I was at [Treet](https://treet.co), building resale and inventory solutions for brands. I also love civic tech and helped build [Pavilion](https://withpavilion.com/), the first search engine for public procurement.
 
 I studied Computer Science at UT Austin and took lots of government classes for fun. I care about how technology intersects with civic life.
 
