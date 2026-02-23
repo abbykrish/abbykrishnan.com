@@ -44,6 +44,8 @@ function initFallingVeggies(): void {
   const veggies = ['🍅', '🥕', '🌽', '🥦', '🍆', '🫑', '🥬', '🧄', '🌶️', '🥒'];
 
   document.addEventListener('click', (e: MouseEvent) => {
+    const target = e.target as HTMLElement;
+    if (target.closest('a, button, input, textarea, select, [role="button"]')) return;
     const veggie = veggies[Math.floor(Math.random() * veggies.length)];
     const el = document.createElement('div');
     el.textContent = veggie;
