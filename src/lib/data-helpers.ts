@@ -36,10 +36,9 @@ export function parseRssItems(
 }
 
 export async function fetchGoogleSheet(
-  sheet?: string
+  gid: string = "0"
 ): Promise<Record<string, string>[]> {
-  let url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv`;
-  if (sheet) url += `&sheet=${sheet}`;
+  const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${gid}`;
 
   const csv = await fetchText(url);
   const { data } = Papa.parse<Record<string, string>>(csv, {

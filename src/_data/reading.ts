@@ -18,7 +18,7 @@ interface ReadingData {
 
 export default async function(): Promise<ReadingData> {
   try {
-    const data = await fetchGoogleSheet("Sheet2");
+    const data = await fetchGoogleSheet("1433215246");
 
     const items: ReadingItem[] = data
       .filter(row => row.name)
