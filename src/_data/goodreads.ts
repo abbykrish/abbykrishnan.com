@@ -1,4 +1,4 @@
-import EleventyFetch from "@11ty/eleventy-fetch";
+import { fetchText, parseRssItems } from "../lib/data-helpers.js";
 
 interface Book {
   title: string;
@@ -15,74 +15,43 @@ interface GoodreadsData {
   totalRead: number;
 }
 
+const TAGS = ["title", "author_name", "user_rating", "user_read_at", "book_image_url", "link"];
+
+function toBook(item: Record<string, string>): Book {
+  return {
+    title: item.title,
+    author: item.author_name,
+    rating: parseInt(item.user_rating) || 0,
+    dateRead: item.user_read_at,
+    imageUrl: item.book_image_url,
+    link: item.link,
+  };
+}
+
 export default async function(): Promise<GoodreadsData> {
   const userId = "68621097";
 
-  const readUrl = `https://www.goodreads.com/review/list_rss/${userId}?shelf=read`;
-  const currentlyReadingUrl = `https://www.goodreads.com/review/list_rss/${userId}?shelf=currently-reading`;
-
   try {
     const [readXml, currentXml] = await Promise.all([
-      EleventyFetch(readUrl, {
-        duration: "1d",
-        type: "text"
-      }),
-      EleventyFetch(currentlyReadingUrl, {
-        duration: "1d",
-        type: "text"
-      })
+      fetchText(`https://www.goodreads.com/review/list_rss/${userId}?shelf=read`),
+      fetchText(`https://www.goodreads.com/review/list_rss/${userId}?shelf=currently-reading`),
     ]);
 
-    const parseBooks = (xml: string): Book[] => {
-      const books: Book[] = [];
-      const itemRegex = /<item>([\s\S]*?)<\/item>/g;
-      let match;
+    const readBooks = parseRssItems(readXml, TAGS)
+      .filter(i => i.title && i.author_name)
+      .map(toBook);
 
-      while ((match = itemRegex.exec(xml)) !== null) {
-        const item = match[1];
-
-        const getTag = (tag: string): string => {
-          const regex = new RegExp(`<${tag}><!\\[CDATA\\[([\\s\\S]*?)\\]\\]></${tag}>|<${tag}>([\\s\\S]*?)</${tag}>`);
-          const m = item.match(regex);
-          return m ? (m[1] || m[2] || '').trim() : '';
-        };
-
-        const title = getTag('title');
-        const author = getTag('author_name');
-        const rating = getTag('user_rating');
-        const dateRead = getTag('user_read_at');
-        const imageUrl = getTag('book_image_url');
-        const link = getTag('link');
-
-        if (title && author) {
-          books.push({
-            title,
-            author,
-            rating: parseInt(rating) || 0,
-            dateRead,
-            imageUrl,
-            link
-          });
-        }
-      }
-
-      return books;
-    };
-
-    const readBooks = parseBooks(readXml as string);
-    const currentlyReading = parseBooks(currentXml as string);
+    const currentlyReading = parseRssItems(currentXml, TAGS)
+      .filter(i => i.title && i.author_name)
+      .map(toBook);
 
     return {
       read: readBooks.slice(0, 10),
       currentlyReading,
-      totalRead: readBooks.length
+      totalRead: readBooks.length,
     };
   } catch (error) {
     console.error("Error fetching Goodreads data:", error);
-    return {
-      read: [],
-      currentlyReading: [],
-      totalRead: 0
-    };
+    return { read: [], currentlyReading: [], totalRead: 0 };
   }
 }

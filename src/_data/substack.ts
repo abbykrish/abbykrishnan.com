@@ -1,4 +1,4 @@
-import EleventyFetch from "@11ty/eleventy-fetch";
+import { fetchText, parseRssItems } from "../lib/data-helpers.js";
 
 interface SubstackPost {
   title: string;
@@ -8,49 +8,22 @@ interface SubstackPost {
 }
 
 export default async function(): Promise<SubstackPost[]> {
-  const feedUrl = "https://abbykrishnan.substack.com/feed";
-
   try {
-    const xml = await EleventyFetch(feedUrl, {
-      duration: "1d",
-      type: "text"
-    });
+    const xml = await fetchText("https://abbykrishnan.substack.com/feed");
+    const items = parseRssItems(xml, ["title", "link", "pubDate", "description"]);
 
-    const posts: SubstackPost[] = [];
-    const itemRegex = /<item>([\s\S]*?)<\/item>/g;
-    let match;
-
-    while ((match = itemRegex.exec(xml as string)) !== null) {
-      const item = match[1];
-
-      const getTag = (tag: string): string => {
-        const regex = new RegExp(`<${tag}><!\\[CDATA\\[([\\s\\S]*?)\\]\\]></${tag}>|<${tag}>([\\s\\S]*?)</${tag}>`);
-        const m = item.match(regex);
-        return m ? (m[1] || m[2] || '').trim() : '';
-      };
-
-      const title = getTag('title');
-      const link = getTag('link');
-      const pubDate = getTag('pubDate');
-      const description = getTag('description');
-
-      const excerpt = description
-        .replace(/<[^>]*>/g, '')
-        .replace(/&nbsp;/g, ' ')
-        .replace(/&amp;/g, '&')
-        .substring(0, 200) + '...';
-
-      if (title) {
-        posts.push({
-          title,
-          link,
-          date: new Date(pubDate),
-          excerpt
-        });
-      }
-    }
-
-    return posts;
+    return items
+      .filter(item => item.title)
+      .map(item => ({
+        title: item.title,
+        link: item.link,
+        date: new Date(item.pubDate),
+        excerpt: item.description
+          .replace(/<[^>]*>/g, '')
+          .replace(/&nbsp;/g, ' ')
+          .replace(/&amp;/g, '&')
+          .substring(0, 200) + '...',
+      }));
   } catch (error) {
     console.error("Error fetching Substack:", error);
     return [];
