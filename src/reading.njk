@@ -1,0 +1,83 @@
+---
+layout: base.njk
+title: Reading
+---
+
+<h1>Reading</h1>
+
+<p>I'm trying to keep track of things I liked reading this year.{% if reading.latestMonth %} Here's what I enjoyed reading most in {{ reading.latestMonth }}.{% endif %}</p>
+
+{% set publicationTypes = ["Substack", "Newspaper"] %}
+{% set articles = [] %}
+{% set publications = [] %}
+{% for item in reading.items %}
+  {% if item.type in publicationTypes %}
+    {% set _ = publications.push(item) %}
+  {% else %}
+    {% set _ = articles.push(item) %}
+  {% endif %}
+{% endfor %}
+
+{% if articles | length > 0 %}
+<section>
+  <h2>Articles</h2>
+  <ul class="reading-list">
+  {% for item in articles %}
+    <li class="reading-item">
+      <span class="reading-name">{% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}</span>
+      {% if item.date %}<span class="reading-date">{{ item.date }}</span>{% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+{% if publications | length > 0 %}
+<section>
+  <h2>Publications I Like</h2>
+  <ul class="reading-list">
+  {% for item in publications %}
+    <li class="reading-item">
+      <span class="reading-name">{% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}</span>
+    </li>
+  {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+<hr class="section-divider">
+
+<h1>Books</h1>
+
+<p>I also love books — mostly fiction, historical fiction, and the occasional sci-fi. I'm always on the hunt for a good recommendation. This is pulled automatically from <a href="https://www.goodreads.com/user/show/68621097-abby-krishnan">my Goodreads</a>.</p>
+
+{% if goodreads.currentlyReading.length > 0 %}
+<section>
+  <h2>Currently Reading</h2>
+  <ul class="book-list">
+  {% for book in goodreads.currentlyReading %}
+    <li class="book-item">
+      <span class="book-title">{{ book.title }}</span>
+      <span class="book-author">by {{ book.author }}</span>
+    </li>
+  {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+<section>
+  <h2>Recently Read</h2>
+  <ul class="book-list">
+  {% for book in goodreads.read %}
+    <li class="book-item">
+      <span class="book-title">{{ book.title }}</span>
+      <span class="book-author">by {{ book.author }}</span>
+      {% if book.rating > 0 %}
+      <span class="book-rating">
+        {% for i in range(0, book.rating) %}★{% endfor %}{% for i in range(book.rating, 5) %}☆{% endfor %}
+      </span>
+      {% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+</section>
