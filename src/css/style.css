@@ -590,6 +590,73 @@ footer {
   margin-left: auto;
 }
 
+/* Copy email button */
+.copy-email {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-light);
+  padding: 0;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.copy-email:hover {
+  color: var(--terracotta);
+  transform: translateY(-2px);
+}
+
+.copy-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--eggplant);
+  color: white;
+  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  margin-bottom: 4px;
+}
+
+.copy-tooltip.show {
+  opacity: 1;
+}
+
+.copy-email-inline {
+  cursor: pointer;
+  color: var(--terracotta);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--terracotta-light);
+  transition: all 0.2s ease;
+}
+
+.copy-email-inline:hover {
+  color: var(--sage-dark);
+  text-decoration-color: var(--sage);
+}
+
+.copy-tooltip-inline {
+  display: none;
+  font-size: 0.8rem;
+  color: var(--sage-dark);
+  margin-left: 0.5rem;
+  font-weight: 500;
+}
+
+.copy-tooltip-inline.show {
+  display: inline;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   html {

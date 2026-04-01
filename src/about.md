@@ -30,6 +30,6 @@ BS in Computer Science from the University of Texas at Austin, with a Bridging D
 
 ## Get in touch
 
-- Email: [abbykrishnan16@gmail.com](mailto:abbykrishnan16@gmail.com)
+- Email: <span class="copy-email-inline" onclick="copyEmail()">abbykrishnan16@gmail.com</span> <span class="copy-tooltip-inline">Copied!</span>
 - LinkedIn: [linkedin.com/in/abbykrish](https://linkedin.com/in/abbykrish)
 - GitHub: [github.com/abbykrish](https://github.com/abbykrish)

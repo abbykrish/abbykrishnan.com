@@ -1,5 +1,23 @@
 // Main TypeScript entry point
 
+function copyEmail(): void {
+  navigator.clipboard.writeText('abbykrishnan16@gmail.com').then(() => {
+    const tooltip = document.querySelector('.copy-tooltip') as HTMLElement;
+    const inlineEl = document.querySelector('.copy-tooltip-inline') as HTMLElement;
+    if (tooltip) {
+      tooltip.classList.add('show');
+      setTimeout(() => tooltip.classList.remove('show'), 1500);
+    }
+    if (inlineEl) {
+      inlineEl.classList.add('show');
+      setTimeout(() => inlineEl.classList.remove('show'), 1500);
+    }
+  });
+}
+
+// Expose to global scope for onclick handlers
+(window as any).copyEmail = copyEmail;
+
 function initShowMoreButtons(): void {
   const buttons = document.querySelectorAll<HTMLButtonElement>('.show-more-btn');
 
