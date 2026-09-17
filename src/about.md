@@ -11,7 +11,8 @@ I'm Abby Krishnan, a software engineer based in San Francisco.
 
 I love early-stage companies where I can make product decisions, collaborate with a tight-knit team, execute quickly, and see the direct impact of my work. 
 
-- **Treet** (2024–present) — Engineer building e-commerce tools for brand resale
+- **[Terraton](https://terraton.ai/)** (2026–present) — Engineer
+- **Treet** (2024–2026) — Engineer building e-commerce tools for brand resale
 - **Phaselaw** (2023) — Founding engineer on data privacy tooling
 - **Pavilion** (2021–2023) — Founding engineer at a civic tech startup building search for government contracts
 - **Affirm** (2020) — Financial instruments team
