@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "abbykrishnan-com",
+  "compatibility_date": "2026-10-01",
+  // Static site served straight from Cloudflare's edge. Add a "main" script
+  // here later if the site ever needs server-side routes or bindings.
+  "assets": {
+    "directory": "./_site",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "abbykrishnan.com", "custom_domain": true },
+    { "pattern": "www.abbykrishnan.com", "custom_domain": true }
+  ],
+  "workers_dev": false
+}

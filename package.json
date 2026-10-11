@@ -4,7 +4,9 @@
   "scripts": {
     "dev": "concurrently \"tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts --serve\" \"esbuild src/ts/main.ts --bundle --outfile=_site/js/main.js --watch\"",
     "build": "tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts && esbuild src/ts/main.ts --bundle --outfile=_site/js/main.js --minify",
-    "build:fresh": "rm -rf .cache && npm run build"
+    "build:fresh": "rm -rf .cache && npm run build",
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build:fresh && wrangler deploy"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
@@ -13,7 +15,8 @@
     "concurrently": "^9.0.0",
     "esbuild": "^0.24.0",
     "tsx": "^4.21.0",
-    "typescript": "^5.6.0"
+    "typescript": "^5.6.0",
+    "wrangler": "^4.149.0"
   },
   "dependencies": {
     "@11ty/eleventy-fetch": "^5.1.1",
