@@ -13,14 +13,11 @@ I love early-stage companies where I can make product decisions, collaborate wit
 
 - **[Terraton](https://terraton.ai/)** (2026–present) — Engineer
 - **Treet** (2024–2026) — Engineer building e-commerce tools for brand resale
-- **Phaselaw** (2023) — Founding engineer on data privacy tooling
 - **Pavilion** (2021–2023) — Founding engineer at a civic tech startup building search for government contracts
 - **Affirm** (2020) — Financial instruments team
 - **Facebook** (2019) — Elections and Civic Integrity team
 
 ## Civic work
-
-Technology and civic life are deeply connected. 
 
 - **TX Votes** — Organized 100+ voter registration events at UT Austin, recognized by Travis County for registering 400+ voters
 - **Texas Civic Tech Project** — Founded and led a student organization that hosted weekly seminar on various topics in civic technology. 
