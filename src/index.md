@@ -6,7 +6,7 @@ title: Home
 <div class="intro-section">
   <img src="/images/profile.jpg" alt="Abby Krishnan" class="profile-photo">
   <div class="intro">
-    <p>Hi, I'm Abby. I'm a <span class="highlight">software engineer</span> in San Francisco who loves building products at early-stage companies, cooking for friends, and thinking about cities.</p>
+    <p>Hi, I'm Abby. I'm a <span class="highlight">software engineer</span> in San Francisco who loves building products at early-stage companies, cooking for friends, and rooting for more bike lanes.</p>
   </div>
 </div>
 
